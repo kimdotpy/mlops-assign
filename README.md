@@ -1,28 +1,3 @@
-# Telco Churn MLOps Pipeline
-
-A complete MLOps pipeline for Telco Customer Churn Prediction with experiment tracking, model registry, serving, and drift monitoring.
-
-## Architecture
-
-```mermaid
-graph TD
-    A[Raw Data] --> B[Data Prep & Drift Injection]
-    B --> C[Reference Dataset 70%]
-    B --> D[Current Dataset 30% with Drift]
-    C --> E[Training Pipeline]
-    E --> F[MLflow Experiment Tracking]
-    F --> G[Model Registry]
-    G --> H[Staging]
-    H --> I[Production]
-    I --> J[FastAPI Model Serving]
-    C --> K[Drift Monitoring]
-    D --> K
-    K --> L[Evidently Reports]
-    L --> F
-    J --> M[/predict API]
-    J --> N[/predict/batch API]
-```
-
 ## Quickstart
 
 ### Prerequisites
